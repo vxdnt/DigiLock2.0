@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: relative;
+    padding: 30px;
+    background-color: #ffb31b;
+}
+
+header, footer.curved-menu {
+    z-index: 10; /* Ensure header and footer are above other content */
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10; /* Ensure the logo is above the background image */
+}
+
+.logo img {
+    height: 50px; /* Adjust size of the logo as needed */
+}
+
+.header-icons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10; /* Ensure icons are above the background image */
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.header-icons i {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: rgb(0, 0, 0); /* Adjust color to match your design */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+footer.curved-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffc400;
+    padding: 10px 0;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Keeps the footer above other content */
+}
+
+footer.curved-menu nav.menu ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer.curved-menu nav.menu ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+footer.curved-menu nav.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+    padding: 30px; /* Adjust padding to make the circle smaller */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+footer.curved-menu nav.menu ul li.active a {
+    background-color: #fffded;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    color: #000000;
+    padding: 15px;
+    transform: translateY(-20px);
+}
+
+footer.curved-menu nav.menu ul li a:hover {
+    color: #06021b;
+}
+
+main {
+    max-width: 470px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.document {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    justify-content: flex-start; /* Aligns the content to the start */
+    gap: 15px; /* Adds spacing between the icon and text */
+}
+
+.document:hover {
+    background-color: #e4e4e4;
+    transform: scale(1.02);
+}
+
+.document i {
+    color: #000000;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.document-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* Allows the text to expand naturally */
+}
+
+.document h3 {
+    font-size: 18px;
+    margin: 0; /* Removes unnecessary margin */
+}
+
+.document p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+
+/* Responsive design */
+@media (max-width: 500px) {
+    main {
+        padding: 10px;
+    }
+    .document {
+        padding: 15px;
+    }
+    .document i {
+        font-size: 35px;
+        margin-right: 8px;
+    }
+    .document h3 {
+        font-size: 16px;
+    }
+    .document p {
+        font-size: 12px;
+    }
+}

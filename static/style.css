@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: relative;
+    height: 400px;
+    background: url('images/1725623789754.png') no-repeat center center;
+    background-size: cover;
+}
+
+header, footer.curved-menu {
+    z-index: 10; /* Ensure header and footer are above other content */
+}
+
+main {
+    flex: 1; /* Pushes footer to the bottom */
+    padding-bottom: 60px; /* Prevent content overlap with footer */
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10; /* Ensure the logo is above the background image */
+}
+
+.logo img {
+    height: 50px; /* Adjust size of the logo as needed */
+}
+
+.header-icons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10; /* Ensure icons are above the background image */
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.header-icons i {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: rgb(0, 0, 0); /* Adjust color to match your design */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.header-text {
+    position: absolute; /* Use absolute positioning */
+    top: 170px; /* Adjust this value to move the text down */
+    left: 20px; /* Adjust this value to move the text left */
+    text-align: left; /* Left-align the text */
+    color: white; /* Adjust text color if needed */
+    width: 250px;
+    font-size: large;
+    z-index: 10; /* Ensure text is above the background image */
+}
+
+.header-image {
+    position: absolute;
+    top: 130px; /* Align with the text */
+    right: 0px;
+    display: flex;
+    align-items: center; /* Center image vertically with the text */
+    z-index: 10; /* Ensure image is above the background image */
+}
+
+.header-image img {
+    height: 160px; /* Adjust size of the image as needed */
+}
+
+.header-text h1 {
+    margin: 0;
+}
+
+section{
+    padding: 15px;
+}
+
+section2 {
+    display: flex; /* Aligns all images in a row */
+    justify-content: space-around; /* Even spacing between images */
+    align-items: center;
+    padding: 20px 0; /* Adds padding around the section */
+}
+
+.image-container {
+    text-align: center; /* Center-align the text under each image */
+}
+
+.image-container img {
+    height: 70px; /* Adjust the height of the images */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 10px; /* Adds space between the image and the title */
+}
+
+.image-container p {
+    font-size: 14px; /* Adjust the text size for titles */
+    color: #333; /* Optional text color */
+}
+
+.explore-more-container {
+    width: 100%; /* Takes full width to center the text */
+    text-align: center; /* Centers the content */
+}
+
+.explore-more {
+    color: rgb(255, 196, 0);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.explore-more:hover {
+    text-decoration: underline;
+}
+
+footer.curved-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffc400;
+    padding: 10px 0;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Keeps the footer above other content */
+}
+
+footer.curved-menu nav.menu ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer.curved-menu nav.menu ul li {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+footer.curved-menu nav.menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+    padding: 30px; /* Adjust padding to make the circle smaller */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+footer.curved-menu nav.menu ul li.active a {
+    background-color: #fffded;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    color: #000000;
+    padding: 15px;
+    transform: translateY(-20px);
+}
+
+footer.curved-menu nav.menu ul li a:hover {
+    color: #06021b;
+}
