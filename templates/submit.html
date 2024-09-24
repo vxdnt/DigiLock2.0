@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiLock</title>
+    <style>
+        /* Center the message box */
+        
+        .message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffd87c; /* Light yellow background */
+    padding: 20px;
+    border: 0px solid #888;
+    width: 300px;
+    border-radius: 15px; /* Rounded corners */
+    text-align: center;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.p {
+    font-size: 15px;
+    font-weight: bold; /* Makes the text bold */
+    margin: 0;
+    color: #333; /* Optional: darker color for better contrast */
+}
+
+        /* Buttons */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            margin: 0 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .button-container button:hover{
+            background-color: rgb(255, 252, 240);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Message Box -->
+
+<div class="message-box">
+    {% if message_status %}
+    <p> {{message}} </p>
+    <p>Do you want to save this?</p>
+    <div class="button-container">
+        <button id="yesBtn"><a href="{{ url_for('data')}}">Yes</a></button>
+        <button id="noBtn">No</button>
+    </div>
+    {% else %}
+<p>PII not detected!<br>Document Uploaded</p>
+<a href="{{url_for('home')}}">Go to home</a>
+{% endif %}
+</div>
+
+
+<!-- <script>
+    // Get the buttons inside the message box
+    var yesBtn = document.getElementById("yesBtn");
+    var noBtn = document.getElementById("noBtn");
+
+    // Add event listeners for Yes and No buttons
+    yesBtn.onclick = function() {
+        alert("You clicked Yes!");
+    }
+
+    noBtn.onclick = function() {
+        alert("You clicked No!");
+    }
+</script> -->
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Upload Docs</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>DigiLock</h1>
+        </div>
+        <div class="header-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="header-text">
+            <h1>Store Your Documents</h1>
+            <p>Keep your documents secured with restricted access.</p>
+        </div>
+        <div class="header-image">
+            <img src="images/1725638824410.png" alt="Lock and Key">
+        </div>
+    </header>
+    
+    <section>
+        <h2>Upload your Documents</h2>
+    </section>
+
+    <section2>
+        <div class="image-container">
+            <img id="upload-files" src="images/Untitled design (6).png" alt="Upload Files">
+            <p>Upload Files</p>
+        </div>
+        <div class="image-container">
+            <img id="camera-click" src="images/Untitled design (7).png" alt="Camera">
+            <p>Camera</p>
+        </div>
+        <div class="image-container">
+            <img src="images/Untitled design (8).png" alt="Create PDF">
+            <p>Create PDF</p>
+        </div>
+        <div class="image-container">
+            <img src="images/Untitled design (9).png" alt="Gallery">
+            <p>Gallery</p>
+        </div>
+    </section2>
+
+    <!-- Hidden file input for uploading -->
+    <input type="file" id="file-input" style="display: none;" multiple>
+
+    <!-- Hidden file input for camera capture -->
+    <input type="file" id="camera-input" accept="image/*;capture=camera" style="display: none;">
+
+    <!-- Confirmation message -->
+    <div class="confirmation-message" id="confirmation-message">
+        Uploaded successfully !
+    </div>
+
+    <footer class="curved-menu">
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-folder"></i></a></li>
+                <li class="active"><a href="upload.html"><i class="fa-solid fa-plus"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-gears"></i></a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

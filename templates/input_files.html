@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit File</title>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf5e6; /* Light cream background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative; /* Make the body position relative for the loader */
+        }
+
+        /* Centered container for form */
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 350px;
+            z-index: 1; /* Keep the form above the loader */
+        }
+
+        /* Form heading */
+        h2 {
+            color: #ffba3a; /* Orange color */
+            margin-bottom: 20px;
+        }
+
+        /* Input styling */
+        input[type="file"] {
+            border: 2px solid #ffba3a;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fff9e6;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #ffba3a;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e9a923;
+        }
+
+        /* Home link */
+        .home-link {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffba3a;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .home-link i {
+            margin-right: 8px;
+        }
+
+        /* Hover effect for home link */
+        .home-link:hover {
+            color: #e9a923;
+        }
+
+        /* Loader styles */
+        .loader {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0; /* Behind the form */
+        }
+
+        .loader div {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #ffba3a;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Upload Your Document</h2>
+        <form id="upload-form" action="{{url_for('upload_file')}}" method="post" enctype="multipart/form-data">
+            <input name="file_input" type="file" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- Home button with Font Awesome icon -->
+        <a class="home-link" href="{{ url_for('home') }}">
+            <i class="fas fa-home"></i> Return Home
+        </a>
+    </div>
+
+    <!-- Loader element -->
+    <div class="loader" id="loader">
+        <div></div>
+    </div>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function() {
+            document.getElementById('loader').style.display = 'block';
+            document.querySelector('.form-container').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
